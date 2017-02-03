@@ -1,17 +1,17 @@
 <?php
 
-/**
-* Configuração dos IPS com acesso permitido.
-* 
-* 
-*/
-
 global $allowed;
-
 global $redirect;
 
 
 
+
+
+/**
+*
+* Allowed IP Addresses
+*
+*/
  $allowed  = [
 
  	
@@ -19,6 +19,13 @@ global $redirect;
 
 ];
 
+
+/**
+* Redirect page.
+* 
+* If the visitor IP address does not match, its browser
+* will redirect to this page.
+*/
 $redirect = 'http://www.iag.usp.br';
 
 

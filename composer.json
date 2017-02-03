@@ -1,0 +1,13 @@
+{
+    "name": "schneider/rac",
+    "description": "provide the access control in web pages against the visitor's IP address",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marcelo Schneider Fialho",
+            "email": "schneider.fei@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

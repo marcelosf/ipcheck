@@ -2,17 +2,18 @@
 
 
 /**
-*	Classe para tratamento de IPS
+* IP Adreess check.
+*
 */
 class IPCheck {
 	
-	// Endereços permitidos
+	// Allowed addresses
 	private $allow = array();
 
-	// Endereço de IP do visitante.
+	// Visitor's IP address.
 	private $remote;
 
-	// Construtor da classe.
+	// Class constructor.
 	public function __construct($allow) {
 
 		$this->allow = $allow;
@@ -21,7 +22,12 @@ class IPCheck {
 
 	}
 
-	// Checa se o IP do visitante confere com a lista de IPS
+	
+	/**
+	*
+	* Check if the Visitor's IP address is able to access the page.
+	*
+	*/
 	public function checkIPs () {
 
 		$validation = true;
@@ -38,9 +44,10 @@ class IPCheck {
 
 
 	/**
-	* Compara o endereço do visitante com 
-	* o endereço permitido.
-	* Retorno: boolean.
+	* Compare the visitor's IP address against the IP adresses filled
+	* on ip.config.php file.
+	*
+	* Return: boolean.
 	*/
 	private function matchIP($allowed) {
 
@@ -55,8 +62,6 @@ class IPCheck {
 			$test = (($value === $remote_parts[$key]) && $test);
 
 			$t = $test ? 1 : 0;
-
-			// printf('allowed: %s, remote: %s, test: %s<br>', $value, $remote_parts[$key], $t);
 
 		}
 
