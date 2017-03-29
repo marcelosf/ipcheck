@@ -34,11 +34,15 @@ class IPCheck {
 
 		foreach ($this->allow as $key => $ip) {
 			
-			$validation = ($this->matchIP($ip) && $validation);
+			if ($this->matchIP($ip)) {
+                            
+                            return true;
+                            
+                        }
 
 		}
 
-		return $validation;
+		return false;
 
 	}
 
@@ -55,17 +59,18 @@ class IPCheck {
 
 		$allowed_parts = explode('.', $allowed);
 
-		$test = true;
-
 		foreach ($allowed_parts as $key => $value) {
 			
-			$test = (($value === $remote_parts[$key]) && $test);
+			if ($value !== $remote_parts[$key]) 
+                        {
+                            
+                            return false;
+                            
+                        }
 
-			$t = $test ? 1 : 0;
-
-		}
-
-		return $test;
+                }
+                
+		return true;
 
 	}
 
